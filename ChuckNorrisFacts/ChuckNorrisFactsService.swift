@@ -9,9 +9,11 @@
 import Foundation
 /*
  {"category":null,"icon_url":"https:\/\/assets.chucknorris.host\/img\/avatar\/chuck-norris.png","id":"SVDmg6M5RQekrwS_1rGRXA","url":"https:\/\/api.chucknorris.io\/jokes\/SVDmg6M5RQekrwS_1rGRXA","value":"Chuck Norris owns a squad of Oompa Loompas"}
+ 
+ NOTE: 'category' is an array of strings.
  */
 struct ChuckNorrisFact: Decodable {
-    let category: String?
+    let category: [String]?
     let icon_url: String?
     let id: String?
     let url: String?
@@ -53,7 +55,12 @@ class ChuckNorrisFactsService {
                     completion?(fact, nil)
                 }
             } catch let error as NSError {
-                completion?(nil, "JSON parsing error: \(error)")
+                var errorString = "JSON parsing error: \(error)"
+                if let jsonDataAsString = String(data: data, encoding: .utf8) {
+                    errorString += "\nJSON: " + jsonDataAsString
+                }
+                
+                completion?(nil, errorString)
             }
             
             }.resume()
