@@ -14,6 +14,7 @@
 		4A366E71203F4DFC005E068B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A366E6F203F4DFC005E068B /* LaunchScreen.storyboard */; };
 		4A366E7C203F4DFC005E068B /* ChuckNorrisFactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A366E7B203F4DFC005E068B /* ChuckNorrisFactsTests.swift */; };
 		4A366E87203F4DFC005E068B /* ChuckNorrisFactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A366E86203F4DFC005E068B /* ChuckNorrisFactsUITests.swift */; };
+		4A366E96203F854B005E068B /* ChuckNorrisFactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A366E95203F854B005E068B /* ChuckNorrisFactsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		4A366E82203F4DFC005E068B /* ChuckNorrisFactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChuckNorrisFactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A366E86203F4DFC005E068B /* ChuckNorrisFactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisFactsUITests.swift; sourceTree = "<group>"; };
 		4A366E88203F4DFC005E068B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A366E95203F854B005E068B /* ChuckNorrisFactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisFactsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				4A366E66203F4DFC005E068B /* AppDelegate.swift */,
+				4A366E95203F854B005E068B /* ChuckNorrisFactsService.swift */,
 				4A366E68203F4DFC005E068B /* ViewController.swift */,
 				4A366E6A203F4DFC005E068B /* Main.storyboard */,
-				4A366E6D203F4DFC005E068B /* Assets.xcassets */,
 				4A366E6F203F4DFC005E068B /* LaunchScreen.storyboard */,
 				4A366E72203F4DFC005E068B /* Info.plist */,
+				4A366E6D203F4DFC005E068B /* Assets.xcassets */,
 			);
 			path = ChuckNorrisFacts;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				4A366E69203F4DFC005E068B /* ViewController.swift in Sources */,
 				4A366E67203F4DFC005E068B /* AppDelegate.swift in Sources */,
+				4A366E96203F854B005E068B /* ChuckNorrisFactsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

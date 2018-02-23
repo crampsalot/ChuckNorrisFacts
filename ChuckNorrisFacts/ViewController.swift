@@ -9,17 +9,42 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var factTextView: UITextView!
+    @IBOutlet weak var getAnotherButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        activityIndicator.isHidden = true
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func getAnotherPressed(_ sender: Any) {
+        getAnotherButton.isEnabled = false
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        view.bringSubview(toFront: activityIndicator)
+        
+        ChuckNorrisFactsService.sharedInstance.getFact { (fact, errorString) in
+            DispatchQueue.main.async {
+                self.getAnotherButton.isEnabled = true
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.startAnimating()
+            }
+            
+            if let errorString = errorString {
+                DispatchQueue.main.async {
+                    self.factTextView.text = errorString
+                }
+                
+                return
+            }
+            
+            if let fact = fact {
+                DispatchQueue.main.async {
+                    self.factTextView.text = fact
+                }
+            }
+        }
     }
-
-
 }
 
