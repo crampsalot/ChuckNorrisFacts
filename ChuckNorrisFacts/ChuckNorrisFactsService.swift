@@ -68,6 +68,7 @@ class ChuckNorrisFactsService {
     
     private func getFactFromJSON(jsonData: Data) throws -> String? {
         let cnFact = try JSONDecoder().decode(ChuckNorrisFact.self, from: jsonData)
+        print(cnFact)
         return cnFact.value
     }
     
