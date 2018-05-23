@@ -23,6 +23,7 @@ struct ChuckNorrisFact: Decodable {
 class ChuckNorrisFactsService {
     private let FACT_URL_STRING = "https://api.chucknorris.io/jokes/random"
     
+    
     static let sharedInstance = ChuckNorrisFactsService()
     
     private init() {
