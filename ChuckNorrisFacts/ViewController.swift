@@ -28,7 +28,7 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 self.getAnotherButton.isEnabled = true
                 self.activityIndicator.isHidden = true
-                self.activityIndicator.startAnimating()
+                self.activityIndicator.stopAnimating()
             }
             
             if let errorString = errorString {
